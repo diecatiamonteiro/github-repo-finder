@@ -16,7 +16,7 @@ This project was created to practice fetching data from APIs and using JavaScrip
 ## Demo
 
 You can try out the Repository Finder app by visiting the following link:
-[GitHub Repo Finder](https://diecatiamonteiro.github.io/pokemon-finder/)
+[GitHub Repo Finder](https://diecatiamonteiro.github.io/github-repo-finder/)
 
 ## Features
 
