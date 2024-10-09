@@ -1,0 +1,279 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 1rem;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  background-color: #f4f4f4;
+}
+
+body,
+input,
+button,
+#results,
+#results *:not(i) {
+  font-family: "Lato", sans-serif;
+}
+
+/* General */
+
+h1 {
+  text-align: center;
+  margin: 30px 0 20px 0;
+  font-size: 3rem;
+}
+
+/* Bar with input and search button */
+
+#container {
+  text-align: center;
+  padding: 20px 0 30px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+input {
+  width: 350px;
+}
+
+button {
+  background-color: #3f4fd8;
+  border: 1px solid #3f4fd8;
+  color: white;
+  font-weight: bold;
+  width: 180px;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+button:hover {
+  background-color: #2c3a9b; /* A darker shade of blue */
+  border-color: #2c3a9b; /* Also change border color to match */
+  cursor: pointer;
+}
+
+/* Intro container (avatar, username, number of repos) */
+
+.container-intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 15px;
+  background-color: #bbbbbb;
+  padding: 20px;
+}
+
+.avatar-img {
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.2rem;
+}
+
+/* Results (all repos) */
+
+#results {
+  font-family: "Lato", sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  max-width: 950px;
+  text-align: center;
+}
+
+/* Each repo line */
+.repo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  border: 1px solid #a7a7a7;
+  padding: 15px;
+}
+
+/* Name, icon & date */
+.top-repo-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Repo name and visit link icon */
+.repo-info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.repo-description {
+  text-align: left;
+  margin-top: 10px;
+  color: #333333;
+}
+
+.repo-name {
+  font-weight: bold;
+}
+
+.repo-date {
+  font-size: 0.8rem;
+  color: #a7a7a7;
+}
+
+/* Icon visit link */
+
+.repo-container a {
+  color: rgb(88, 88, 88);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.repo-container a:hover {
+  transform: scale(1.1);
+}
+
+.repo-container a:visited,
+.repo-container a:active {
+  color: #3f4fd8;
+}
+
+.repo-container i {
+  font-size: 1.35rem;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+/* Style for error messages */
+
+.error-message {
+  background-color: none;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #a7a7a7;
+  padding: 10px;
+}
+
+/* Spinner */
+
+#spinner {
+  display: none;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #585858;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scroll bar */
+
+/* For WebKit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
+
+/* Mobile styles for screens 600px and smaller */
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #container {
+    padding: 10px 0;
+  }
+
+  input {
+    width: 70%;
+    margin: 5px;
+  }
+
+  button {
+    width: 70%;
+    margin: 5px;
+    font-size: 1rem;
+  }
+
+  .container-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar-img {
+    width: 80px;
+  }
+
+  .user-intro {
+    font-size: 1rem;
+  }
+
+  #results {
+    width: 90%;
+  }
+
+  .repo-container {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .top-repo-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .repo-info {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .repo-date {
+    margin-top: 10px;
+  }
+}
